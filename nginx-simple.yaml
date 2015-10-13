@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginxsimple
+  labels:
+    app: nginx
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 80
+    nodePort: 31111
+    protocol: TCP
+    name: http
+  selector:
+    app: nginx
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nginxsimple
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
