@@ -10,8 +10,7 @@ RUN dnf -y install \
 	iotop \ 
 	bwm-ng \
 	passwd \
-	screen \
-	byobu \
+	psmisc \
 	; dnf clean all
 
 RUN sed -i s/PasswordAuthentication\ yes/PasswordAuthentication\ no/g /etc/ssh/sshd_config
