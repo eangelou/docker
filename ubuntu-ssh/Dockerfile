@@ -10,6 +10,7 @@ RUN dnf -y install \
 	iotop \ 
 	bwm-ng \
 	passwd \
+	byobu \
 	psmisc \
 	; dnf clean all
 
