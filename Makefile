@@ -7,12 +7,12 @@ all: docker_build docker_tag docker_login docker_push
 .PHONY: all
 
 docker_build:
-	docker build --tag=$(REPO):v$(VERSION) --rm ubuntu-ssh 
+	docker build --tag=$(REPO):latest --rm ubuntu-ssh 
 .PHONY: docker_build
 
 docker_tag:
 #	docker rmi $(REPO):latest
-	docker tag -f  $(REPO):v$(VERSION) $(REPO):latest
+	docker tag -f  $(REPO):latest $(REPO):v$(VERSION)
 .PHONY: docker_tag
 
 docker_login:

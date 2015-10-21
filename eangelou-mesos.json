@@ -1,0 +1,43 @@
+{
+    "id": "/eangelou",
+    "cpus": 1.5,
+    "mem": 256.0,
+    "ports": [
+        8022
+    ],
+    "requirePorts": false,
+    "instances": 1,
+    "executor": "",
+    "container": {
+  "type": "DOCKER",
+      "id":"ubuntu",
+     "instances": 1,
+    "cpus": 0.5,
+    "mem": 512,
+  "docker": {
+    "image": "eangelou/cslab",
+    "network": "BRIDGE",
+    "portMappings": [
+      {
+        "containerPort": 22,
+        "hostPort": 0,
+        "servicePort": 8022,
+        "protocol": "tcp"
+      }
+    ],
+    "privileged": false,
+    "parameters": [
+      {
+        "key": "cpuset",
+        "value": "0,1"
+      },
+      {
+        "key": "cpu-shares",
+        "value": "512"
+      }
+    ],
+    "forcePullImage": true
+    }
+}
+}
+
