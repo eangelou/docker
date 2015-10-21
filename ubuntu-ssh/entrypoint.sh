@@ -17,6 +17,10 @@ cp /authorized_keys /home/$SSH_USERNAME/.ssh/
 chmod 700 /home/$SSH_USERNAME/.ssh
 chmod 600 /home/$SSH_USERNAME/.ssh/authorized_keys
 chown -R $SSH_USERNAME  /home/$SSH_USERNAME/.ssh
+mkdir -p /root/.ssh
+cp /authorized_keys /root/.ssh/
+chmod 700 /root/.ssh
+chmod 600 /root/.ssh/authorized_keys
 }
 
 __create_hostkeys() {

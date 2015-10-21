@@ -1,4 +1,4 @@
-VERSION=0.1
+VERSION=0.2
 
 REPO=eangelou/cslab
 
@@ -11,7 +11,8 @@ docker_build:
 .PHONY: docker_build
 
 docker_tag:
-	docker tag  $(REPO):v$(VERSION) $(REPO):latest
+#	docker rmi $(REPO):latest
+	docker tag -f $(REPO):latest $(REPO):v$(VERSION)
 .PHONY: docker_tag
 
 docker_login:
