@@ -1,5 +1,5 @@
-FROM fedora
-MAINTAINER http://fedoraproject.org/wiki/Cloud
+FROM fedora 
+MAINTAINER eangelou
 
 EXPOSE 22
 
@@ -10,6 +10,8 @@ RUN dnf -y install \
 	iotop \ 
 	bwm-ng \
 	passwd \
+	screen \
+	byobu \
 	; dnf clean all
 
 RUN sed -i s/PasswordAuthentication\ yes/PasswordAuthentication\ no/g /etc/ssh/sshd_config

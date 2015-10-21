@@ -12,7 +12,7 @@ docker_build:
 
 docker_tag:
 #	docker rmi $(REPO):latest
-	docker tag -f $(REPO):latest $(REPO):v$(VERSION)
+	docker tag -f  $(REPO):v$(VERSION) $(REPO):latest
 .PHONY: docker_tag
 
 docker_login:
