@@ -2,8 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER eangelou
 
 EXPOSE 22
-RUN apt-get -y update
-RUN apt-get -y install \
+RUN apt-get -y update && apt-get -y install \
 	openssh-server \
 	stress \
 	htop \	
