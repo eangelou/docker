@@ -1,9 +1,9 @@
-FROM ubuntu
+FROM fedora 
 MAINTAINER eangelou
 
 EXPOSE 22
 
-RUN apt-get -y install \
+RUN dnf -y install \
 	openssh-server \
 	stress \
 	htop \	
@@ -12,7 +12,7 @@ RUN apt-get -y install \
 	passwd \
 	byobu \
 	psmisc \
-	; apt-get clean all
+	; dnf clean all
 
 RUN sed -i s/PasswordAuthentication\ yes/PasswordAuthentication\ no/g /etc/ssh/sshd_config
 
