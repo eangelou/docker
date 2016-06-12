@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: ${SSH_USERNAME:=fedora}
+: ${SSH_USERNAME:=ubuntu}
 : ${SSH_USERPASS:=$(dd if=/dev/urandom bs=1 count=15 | base64)}
 
 __create_rundir() {
