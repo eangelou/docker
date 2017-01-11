@@ -1,18 +1,19 @@
 VERSION=0.2
 
 REPO=eangelou/cslab
+FOLDER=memcached
 
 all: docker_build docker_tag docker_login docker_push
 	echo "build complete"
 .PHONY: all
 
 docker_build:
-	docker build --tag=$(REPO):latest --rm ubuntu-ssh 
+	docker build --tag=$(REPO):latest --rm $(FOLDER)
 .PHONY: docker_build
 
 docker_tag:
 #	docker rmi $(REPO):latest
-	docker tag -f  $(REPO):latest $(REPO):v$(VERSION)
+	docker tag  $(REPO):latest $(REPO):v$(VERSION)
 .PHONY: docker_tag
 
 docker_login:
