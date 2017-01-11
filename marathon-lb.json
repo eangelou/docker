@@ -1,0 +1,25 @@
+{
+  "id": "/marathon-lb",
+  "container": {
+    "type": "DOCKER",
+    "volumes": [
+      {
+        "containerPath": "/dev/log",
+        "hostPath": "/dev/log",
+        "mode": "RW"
+      }
+    ],
+    "docker": {
+      "image": "mesosphere/marathon-lb:latest",
+      "network": "HOST",
+      "privileged": true,
+      "forcePullImage": true
+    }
+  },
+    "args": [
+         "sse",
+         "--marathon", "http://haci3:8080",
+         "--group", "external",
+         "--haproxy-map"
+    ]
+}

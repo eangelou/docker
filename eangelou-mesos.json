@@ -8,6 +8,9 @@
        32022,
        32122
     ],
+    "labels": {
+      "HAPROXY_GROUP":"external"
+    },
     "instances": 1,
     "executor": "",
     "container": {
@@ -22,13 +25,11 @@
     "portMappings": [
       {
         "containerPort": 22,
-        "hostPort": 31022,
         "servicePort": 32022,
         "protocol": "tcp"
       },
       { 
         "containerPort": 11211,
-        "hostPort": 31122,
         "servicePort": 32122,
         "protocol": "tcp"
       }
