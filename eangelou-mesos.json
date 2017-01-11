@@ -3,11 +3,11 @@
     "cpus": 1.5,
     "mem": 1024.0,
     "disk": 1024.0,
+    "requirePorts": true,
     "ports": [
-        32022,
-        32122
+       32022,
+       32122
     ],
-    "requirePorts": false,
     "instances": 1,
     "executor": "",
     "container": {
@@ -22,13 +22,13 @@
     "portMappings": [
       {
         "containerPort": 22,
-        "hostPort": 0,
+        "hostPort": 31022,
         "servicePort": 32022,
         "protocol": "tcp"
       },
       { 
         "containerPort": 11211,
-        "hostPort": 0,
+        "hostPort": 31122,
         "servicePort": 32122,
         "protocol": "tcp"
       }
