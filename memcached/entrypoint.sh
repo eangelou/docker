@@ -28,10 +28,14 @@ rm -f /etc/ssh/ssh_host_rsa_key
 ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N '' 
 }
 
+__start_ssh() {
+/usr/sbin/sshd -D &
+}
 # Call all functions
 __create_rundir
 __create_hostkeys
 __create_user
+__start_ssh
 
 exec "$@"
 

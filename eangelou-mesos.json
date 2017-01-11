@@ -4,14 +4,15 @@
     "mem": 1024.0,
     "disk": 1024.0,
     "ports": [
-        8022
+        32022,
+        32122
     ],
     "requirePorts": false,
     "instances": 1,
     "executor": "",
     "container": {
   "type": "DOCKER",
-      "id":"ubuntu",
+      "id":"memcached",
      "instances": 1,
     "cpus": 0.5,
     "mem": 512,
@@ -22,7 +23,13 @@
       {
         "containerPort": 22,
         "hostPort": 0,
-        "servicePort": 8022,
+        "servicePort": 32022,
+        "protocol": "tcp"
+      },
+      { 
+        "containerPort": 11211,
+        "hostPort": 0,
+        "servicePort": 32122,
         "protocol": "tcp"
       }
     ],
