@@ -1,5 +1,7 @@
 {
   "id": "/marathon-lb",
+  "cpus": 1.0,
+  "mem": 1024.0,
   "container": {
     "type": "DOCKER",
     "volumes": [
