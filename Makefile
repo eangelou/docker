@@ -1,7 +1,7 @@
-VERSION=0.2
+VERSION=cpu0.3
 
 REPO=eangelou/cslab
-FOLDER=memcached
+FOLDER=mesos-cpu
 
 all: docker_build docker_tag docker_login docker_push
 	echo "build complete"

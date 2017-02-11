@@ -1,0 +1,42 @@
+{
+    "id": "/cpu",
+    "cpus": 2.0,
+    "mem": 1024.0,
+    "disk": 1024.0,
+    "requirePorts": true,
+    "ports": [
+       32222
+    ],
+    "labels": {
+      "HAPROXY_GROUP":"external"
+    },
+    "instances": 1,
+    "executor": "",
+    "container": {
+        "type": "DOCKER",
+        "id":"cpu",
+        "instances": 1,
+        "cpus": 2.0,
+        "mem": 1024.0,
+        "docker": {
+            "image": "eangelou/cslab",
+            "network": "BRIDGE",
+            "portMappings": [
+            {
+                "containerPort": 22,
+                "servicePort": 32022,
+                "protocol": "tcp"
+            }
+            ],
+            "privileged": false,
+            "parameters": [
+                {
+                    "key": "cpu-shares",
+                    "value": "1024"
+                }
+            ],
+            "forcePullImage": true
+        }
+    }
+}
+
